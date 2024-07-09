@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS, Bootstrap, Javascript, Web Development Course</title>
+    <style>
+        div {
+            width: 100%;
+            margin: 12px 20px;
+            border: 2px solid black;      
+            }
+            strong { 
+                font-size: x-large;
+            }
+    </style>
+</head>
+<body>
+    <h1>CSS, Bootstrap, Javascript, Web Development Course</h1>
+
+    <h3>CSS Fontes</h3>
+
+    <div style="background-color: aqua;">
+        <p><strong> 1. Fonte size:</strong>  tamanho da fonte usando unidades absolutas como pixels (px) ou pontos (pt)
+            As unidades relativas são úteis para criar layouts responsivos, pois elas se baseiam no tamanho atual da fonte. As unidades mais comuns incluem <strong>em</strong>, <strong>rem</strong>, <strong>%</strong> e <strong>vw</strong>.
+    <ul>
+        <li>em: Baseado no tamanho da fonte do elemento pai.</li>
+        <li>rem: Baseado no tamanho da fonte do elemento raiz.</li>
+        <li>%: Baseado na largura do contêiner do elemento.</li>
+        <li>vw: Baseado na largura da janela de visualização.</li>
+    </ul>
+    
+    Palavras-chave como:
+    <ul>
+        <li>xx-,  small, medium, large, larger e x-large</li>
+    </ul>
+      Essas palavras-chave são interpretadas de forma diferente por diferentes navegadores, então é melhor evitar seu uso quando possível. 
+    font-size-adjust: Esta propriedade ajusta o tamanho da fonte para manter uma proporção consistente entre letras maiúsculas e minúsculas, especialmente útil ao lidar com fontes de fallback que têm valores de aspecto diferentes
+          </p>    
+    </div>
+
+
+   <div style="background-color: bisque;">
+    <p><strong>2. Font-family</strong> em CSS é usada para especificar a fonte de um elemento. Ela permite listar várias fontes, separadas por vírgulas, criando um sistema de fallback. Isso significa que se o navegador não suportar a 
+        primeira fonte especificada, tentará usar a próxima até encontrar uma que esteja disponível. Além disso, é recomendável sempre terminar a lista com uma família genérica de fontes (como serif, sans-serif, monospace, etc.), permitindo que o  navegador escolha uma fonte semelhante dentro dessa família caso nenhuma das fontes específicas esteja disponível. 
+
+       A sintaxe básica para usar font-family inclui o nome da fonte desejada, seguido por vírgulas e os nomes das fontes alternativas, terminando com uma família genérica  
+       , o navegador tentará aplicar a fonte "Arial". Se essa fonte não estiver disponível, ele usará qualquer fonte sans-serif disponível. 
+       Dicas Importantes:
+       <ul>
+           <li>Quotas: Se o nome da fonte contiver espaços em branco ou caracteres especiais, deve ser colocado entre aspas.
+             </li>
+             <li>  Famílias Genéricas: Sempre termine a lista de fontes com uma família genérica para garantir a compatibilidade máxima entre navegadores e sistemas operacionais.</li>
+               <li>Herança: A propriedade font-family é herdada dos elementos pais, mas pode ser sobrescrita para cada elemento individualmente.
+                   Utilizando a propriedade font-family de maneira eficaz, você pode controlar a tipografia de sua página web de forma precisa, garantindo uma aparência consistente em diferentes navegadores e dispositivos.</li>
+       </ul>
+    </p>
+   </div>
+
+<div style="background-color: rgba(118, 118, 240, 0.299);">
+    
+    <p><strong>3. Font-weight </strong>em CSS especifica o peso ou intensidade de uma fonte, como a negrito. Aqui estão alguns pontos-chave sobre ela:
+
+        A propriedade font-weight aceita vários valores:
+        <ul>
+            <li> normal: Representa o peso padrão da fonte (equivalente a 400).</li>
+            <li>   bold: Indica um peso de fonte negrito (equivalente a 700).</li>
+            <li>  lighter: Refere-se a um peso de fonte mais leve que o elemento pai (entre os pesos de fonte disponíveis).</li>
+            <li>  bolder: Refere-se a um peso de fonte mais escuro que o elemento pai (entre os pesos de fonte disponíveis).</li>
+            <li> Valores numéricos (100 a 900): Correspondem a pesos de fonte específicos (por exemplo, 100 é fino, 700 é negrito). </li>
+        </ul>
+        Se um peso solicitado não estiver disponível, o navegador usa heurísticas para determinar o peso mais próximo disponível.
+Mapeamentos comuns para pesos numéricos:
+<ul>
+    <li>100: Fino (Hairline)</li>
+    <li>200: Extra leve (Ultra Light)</li>
+    <li>300: Leve</li>
+    <li>400: Normal</li>
+    <li>500: Médio</li>
+    <li>600: Semi negrito (Demi Bold)</li>
+    <li>700: Negrito</li>
+    <li>800: Extra negrito (Ultra Bold)</li>
+    <li>900: Preto (Heavy)</li>
+</ul>
+A interpolação ocorre em etapas discretas (múltiplos de 100) ao especificar valores numéricos. </p>
+</div>
+
+
+    <div style="background-color: rgb(246, 153, 153);">
+        <p><strong>4. Font-style</strong> em CSS permite especificar o estilo da fonte. Ela tem três valores principais:
+
+            <ul>
+             <li> normal: O texto é exibido normalmente </li>
+             <li> italic: O texto é exibido em itálico  </li>
+             <li> oblique: O texto é inclinado (semelhante ao itálico, mas menos suportado)</li>
+            </ul> </p> 
+    </div>
+
+    <div style="background-color: rgba(128, 255, 0, 0.297);">
+        <p><strong>5. Font-display</strong> em CSS controla como as fontes da web são exibidas e renderizadas antes de serem totalmente carregadas. Ela permite definir o comportamento das fontes de fallback ou estratégias de carregamento de fontes, proporcionando melhor controle sobre a renderização de fontes e a experiência do usuário.
+
+            Aqui estão os valores aceitos pela propriedade font-display:
+           <ul>
+            <li>auto (padrão):O navegador use seu método padrão de carregamento, geralmente semelhante ao valor block</li>
+            <li>block:O navegador  ocultar brevemente o texto até que a fonte seja totalmente baixada. Isso é conhecido como “flash de texto invisível” ou FOIT </li>
+            <li> swap:O navegador usa a fonte de fallback para exibir o texto até que a fonte personalizada seja totalmente baixada. Isso é conhecido como “flash de texto sem estilo” ou FOUT</li>
+            <li> fallback: Age como um compromisso entre os valores auto e swap. O navegador oculta o texto por cerca de 100 ms e, se a fonte ainda não tiver sido baixada, usará o texto de fallback. Ele trocará para a nova fonte após o download, mas apenas durante um curto período de troca (provavelmente 3 segundos)</li>
+            <li>optional: Semelhante ao fallback, esse valor diz ao navegador para ocultar inicialmente o texto e, em seguida, usar uma fonte de fallback até que a fonte personalizada esteja disponível para uso. No entanto, esse valor também permite que o navegador determine se a fonte personalizada será usada, com base na velocidade de conexão do usuário, onde conexões mais lentas têm menos probabilidade de receber a fonte personalizada </li>
+           </ul>
+            
+            Antes do amplo suporte ao @font-face, nossas opções tipográficas eram limitadas a fontes locais. Com o @font-face, designers e desenvolvedores front-end ganharam novos poderes tipográficos, mas também enfrentaram desafios de desempenho. O font-display nos permite equilibrar a experiência do usuário com o carregamento de fontes personalizadas</p>
+        
+    </div>
+
+   <div style="background-color: rgb(214, 151, 214);">
+    <p><strong> 6. Font-variant</strong> em CSS permite definir o estilo da fonte. Ela possui dois valores principais:
+
+        <ul>
+         <li> normal: O texto é exibido com a fonte padrão</li>
+         <li>small-caps: O texto é exibido em letras maiúsculas pequenas, onde todas as letras minúsculas são convertidas em maiúsculas, mas com um tamanho menor do que as maiúsculas originais,   Isso fará com que todas as letras minúsculas no parágrafo sejam exibidas como maiúsculas pequenas</li>
+        </ul>       
+        </p>        
+   </div>
+
+
+  <div style="background-color: rgb(234, 200, 158);">
+    <p><strong>7. Font-feature-settings</strong> no CSS permite controlar recursos tipográficos avançados em fontes OpenType. Com ela, você pode habilitar ou desabilitar características como ligaturas, letras maiúsculas pequenas, caracteres alternativos e outras opções de tipografia não disponíveis em fontes padrão.
+
+        Lembre-se de que, sempre que possível, é recomendado usar propriedades mais específicas, como font-variant-ligatures, font-variant-caps, font-variant-east-asian, font-variant-alternates, font-variant-numeric ou font-variant-position, em vez de font-feature-settings. Essas opções oferecem resultados mais previsíveis e compreensíveis.
+    </p>
+    
+  </div>
+
+  <div style="background-color: cornsilk;">
+    <p><strong>8.Font-stretch</strong> no CSS permite controlar a largura ou estiramento de uma fonte dentro de uma família de fontes. Ela ajusta o espaçamento dos caracteres horizontalmente sem alterar o tamanho ou peso da fonte. Aqui estão os valores aceitos:
+
+        <ul>
+          <li>normal: Seleciona a face normal da fonte</li>
+          <li> ultra-condensed, extra-condensed, condensed: Faces mais estreitas do que a normal, com ultra-condensed sendo a mais comprimida</li>
+          <li>semi-condensed: Uma face ligeiramente mais estreita que a normal</li>
+          <li>semi-expanded, expanded, extra-expanded, ultra-expanded: Faces mais largas que a normal, com ultra-expanded sendo a mais expandida</li>
+          <li>Valores em porcentagem: Entre 50% e 200% (inclusive). Valores negativos não são permitidos</li>
+          <li>A seleção da face depende das faces suportadas pela fonte. Se a fonte não oferecer uma face exatamente correspondente ao valor dado, valores abaixo de 100% mapeiam para uma face mais estreita, e valores maiores ou iguais a 100% mapeiam para uma face mais larga</li>
+        </ul>
+         Por exemplo, se você usar a propriedade font-stretch com uma fonte variável, como a “Anek Malayalam”, ela ajustará a largura da fonte conforme necessário. Já a fonte “Inconsolata” oferece uma ampla gama de larguras contínuas de 50% a 200%</p>
+  
+  </div>
+
+  <div style="background-color: rgb(232, 150, 166);">
+    
+    <p><strong>9.Font-variant-ligatures</strong> no CSS controla quais ligaturas e formas contextuais são usadas no conteúdo textual dos elementos aos quais ela é aplicada. Isso resulta em formas mais harmonizadas no texto resultante. Aqui estão os valores possíveis:
+
+       <ul><li> normal: Ativa as ligaturas e formas contextuais usuais necessárias para a renderização correta. As ligaturas e formas ativadas dependem da fonte, idioma e tipo de script. Esse é o valor padrão</li>
+    <li>none: Desativa todas as ligaturas e formas contextuais, incluindo as comuns </li>
+    <li> common-ligatures: Ativa as ligaturas mais comuns, como “fi”, “ffi”, “th” ou similares</li>
+    <li>no-common-ligatures: Desativa essas ligaturas comuns</li>
+    <li>discretionary-ligatures: Ativa ligaturas específicas definidas pelo designer da fonte</li>
+    <li>no-discretionary-ligatures: Desativa essas ligaturas específicas</li>
+    <li>historical-ligatures: Ativa ligaturas usadas historicamente em livros antigos, como o dígrafo alemão “tz” exibido como “ꜩ”</li>
+    <li>no-historical-ligatures: Desativa essas ligaturas históricas</li>
+    <li>contextual: Controla se as letras se adaptam ao contexto, ou seja, se elas se ajustam às letras circundantes</li>
+    <li>no-contextual: Impede o uso dessas alternativas contextuais</li>
+    </ul></p>
+
+  </div>
+
+
+  <div style="background-color: rgb(142, 174, 163);">
+    <p><strong>10.Font-variation-settings</strong> no CSS permite controlar características de fontes variáveis, especificando os nomes dos quatro eixos das características que você deseja variar, juntamente com seus valores. Aqui estão os detalhes:
+
+      <ul>
+        <li>  Valor Padrão (normal): O texto é exibido usando as configurações padrão da fonte</li>
+        <li> Valor Personalizado (<string> <number>): Ao renderizar o texto, a lista de nomes de eixos de fontes variáveis é passada para o mecanismo de layout de texto para habilitar ou desabilitar recursos da fonte. Cada configuração consiste em um par com uma <string> de 4 caracteres ASCII seguida por um <number> que indica o valor do eixo a ser definido. Se a <string> tiver mais ou menos caracteres ou contiver caracteres fora do intervalo de código U+20 a U+7E, a propriedade inteira será inválida. O <number> pode ser fracionário ou negativo, dependendo do intervalo de valores disponíveis na fonte, conforme definido pelo designer da fonte</li>
+            <li>Descrição: Essa propriedade é um mecanismo de baixo nível projetado para definir recursos de fontes variáveis quando nenhuma outra maneira de habilitar ou acessar esses recursos existe. Use-a apenas quando não houver propriedades básicas disponíveis para definir esses recursos (por exemplo, font-weight, font-style). As características de fonte definidas com font-variation-settings sempre substituirão aquelas definidas pelas propriedades básicas correspondentes, independentemente de onde apareçam na cascata. Em alguns navegadores, isso é verdade apenas quando a declaração @font-face inclui um intervalo de pesos de fonte</li>
+            <li>Eixos Registrados e Personalizados: Os eixos de fontes variáveis podem ser registrados ou personalizados. Os eixos registrados são os mais comuns e têm nomes padronizados, como:
+                <ul>
+                    <li>  wght (peso da fonte) corresponde a font-weight  </li>
+                    <li>wdth (largura da fonte) corresponde a font-stretch</li>
+                    <li>slnt (inclinado) corresponde a font-style: oblique + ângulo</li>
+                    <li> ital (itálico) corresponde a font-style: italic  </li>
+                    <li> opsz (dimensionamento óptico) corresponde a font-optical-sizing</li>
+                </ul>
+              
+                Os eixos personalizados podem variar qualquer característica imaginável, como altura de ascendentes ou descendentes, tamanho de serifas e muito mais. Qualquer eixo pode ser usado, desde que tenha um nome exclusivo de 4 caracteres. Alguns eixos personalizados podem se tornar mais comuns com o tempo, mas os nomes de eixos são sensíveis a maiúsculas e minúsculas</li>
+    </ul></p>
+  </div>
+
+   <div style="background-color: cyan;">
+    <p><strong>11. Font-kerning </strong>no CSS controla o uso das informações de kerning, que afetam o espaçamento entre letras. Quando uma fonte está bem-kerned, esse recurso torna o espaçamento entre os caracteres mais uniforme e agradável à leitura. 
+        <ul>
+            <li> auto: O navegador decide se deve usar kerning ou não. Em algumas situações, como fontes pequenas, o kerning pode prejudicar a legibilidade do texto.</li>
+            <li> normal: Aplica as informações de kerning armazenadas na fonte.</li>
+            <li>  none: Desativa o kerning armazenado na fonte.</li>
+        </ul>      
+        Lembre-se de que nem todas as fontes possuem dados de kerning, e essa propriedade pode não ter efeito visível em algumas delas</p>
+   </div>
+
+
+ <div style="background-color: darksalmon;">
+      
+    <p><strong>12. Font-language-override</strong> no CSS controla o uso de glifos específicos do idioma em uma fonte. Por padrão, o atributo lang do HTML instrui os navegadores a exibirem glifos projetados especificamente para aquele idioma.
+
+       <ul>
+        <li> normal: Indica ao navegador para usar glifos de fonte apropriados para o idioma especificado pelo atributo lang. Esse é o valor padrão.</li>
+        <li><string>: Instrui o navegador a usar glifos de fonte apropriados para o idioma especificado pela string. A string deve corresponder a uma tag de idioma encontrada no sistema de idiomas OpenType. Por exemplo, “ENG” é inglês, e “KOR” é coreano.</li>
+       </ul>
+      Isso permite controlar o comportamento da fonte para um idioma específico, o que pode ser útil quando a fonte não oferece suporte adequado para um determinado idioma</p>
+
+ </div>
+
+ <div>
+    
+    <p><strong>13. Font-optical-sizing</strong> no CSS controla se a renderização do texto é otimizada para visualização em diferentes tamanhos. Ela afeta como os glifos (caracteres) da fonte são ajustados para melhor legibilidade e estética.
+<ul>
+    <li> auto: O navegador decide se deve usar o ajuste óptico ou não. Isso é o padrão.</li>
+    <li>none: O navegador não modifica a forma dos glifos para visualização ideal.</li>
+</ul>
+    O ajuste óptico é ativado por padrão para fontes que possuem um eixo de variação de tamanho óptico (representado por opsz em font-variation-settings). Quando usado, o texto pequeno geralmente é renderizado com traços mais espessos e serifas maiores, enquanto o texto maior é renderizado de forma mais delicada, com maior contraste entre traços mais finos e mais espessos.
+             
+    Lembre-se de que nem todas as fontes suportam o ajuste óptico, mas você pode testar com uma fonte que inclui essa funcionalidade, como a “Amstelvar” (disponível para download no GitHub)</p>
+
+ </div>
+
+
+   <div style="background-color: darkkhaki;">
+    <p><strong>14.Font-palette</strong> no CSS permite especificar uma das muitas paletas contidas em uma fonte colorida que um agente de usuário pode usar para a fonte. Além disso, os usuários podem substituir os valores em uma paleta ou criar uma nova paleta usando a regra @font-palette-values.
+<ul>
+    <li> normal: Especifica a paleta de cores padrão ou a colorização de glifos padrão (definida pelo criador da fonte) a ser usada para a fonte. Com essa configuração, a paleta na fonte no índice 0 é renderizada.</li>
+    <li> light: Usa a primeira paleta na fonte que corresponde a “light” (aplicável a fundos próximos ao branco). Algumas fontes contêm metadados que identificam uma paleta como adequada para fundos claros. Se a fonte não tiver esses metadados, o valor “light” se comporta como “normal”.</li>
+    <li>  dark: Usa a primeira paleta na fonte que corresponde a “dark” (aplicável a fundos próximos ao preto). Algumas fontes contêm metadados que identificam uma paleta como adequada para fundos escuros. Se a fonte não tiver esses metadados, o valor se comporta como “normal”.</li>
+    <li><identificador-de-paleta>: Permite especificar seus próprios valores para a paleta de fontes usando a regra @font-palette-values. Esse valor é especificado no formato <dashed-ident>.</li>
+</ul>
+    Lembre-se de que nem todas as fontes suportam paletas, mas essa propriedade é útil para criar texto mais vibrante e visualmente atraente, especialmente com fontes coloridas</p>
+  
+   </div>
+
+   <div style="background-color: rgba(153, 50, 204, 0.39);">
+    
+    <p><strong>15. Font-synthesis</strong> no CSS permite controlar se o navegador sintetiza os tipos de fonte em negrito, itálico, letras maiúsculas pequenas e/ou sobrescrito e subscrito quando eles estão ausentes na família de fontes especificada.
+        <ul>
+            <li>  none: Nenhum tipo de fonte em negrito, itálico ou letras maiúsculas pequenas pode ser sintetizado pelo navegador.</li>
+            <li>  weight: O tipo de fonte em negrito ausente pode ser sintetizado pelo navegador, se necessário.</li>
+            <li> style: O tipo de fonte em itálico pode ser sintetizado pelo navegador, se necessário.</li>
+            <li> small-caps: O tipo de fonte em letras maiúsculas pequenas pode ser sintetizado pelo navegador, se necessário.</li>
+            <li>position: O tipo de fonte em sobrescrito e subscrito pode ser sintetizado pelo navegador ao usar font-variant-position.</li>
+        </ul>
+    
+        A maioria das fontes ocidentais padrão inclui variantes em itálico e negrito, mas muitas fontes não têm essas variantes. Fontes usadas para scripts logográficos (como chinês, japonês e coreano) geralmente não incluem essas variantes. Sintetizá-las pode prejudicar a legibilidade ou alterar o significado do texto.
+        Para desativar a síntese do navegador para um idioma específico (por exemplo, árabe), você pode usar a pseudo-classe :lang():
+       
+        Suponha que você esteja usando a fonte Lato do Google Fonts e ela não tenha faces em negrito ou itálico. Você pode controlar como o navegador lida com esses estilos ausentes com font-synthesis.
+        Lembre-se de que essa propriedade ajuda a garantir uma tipografia consistente, respeitando as limitações da fonte e os requisitos específicos do script</p>
+   </div>
+
+
+
+   <div style="background-color: rgb(215, 178, 152);">
+    <p><strong>16. Font-synthesis-position</strong> no CSS permite especificar se um navegador pode ou não sintetizar os tipos de fonte de “posição” para subscrito e sobrescrito quando estão ausentes em uma família de fontes, enquanto usa font-variant-position para definir as posições. 
+        <ul>
+            <li> auto: Indica que um tipo de fonte de posição ausente pode ser sintetizado pelo navegador, se necessário</li>
+            <li> none: Indica que a síntese de um tipo de fonte de posição ausente pelo navegador não é permitida</li>
+        </ul>
+     A propriedade font-synthesis-position não tem efeito ao usar os elementos <sup> e <sub>.
+        É conveniente usar a propriedade abreviada font-synthesis para controlar todos os valores de síntese de tipo de fonte.
+    
+        Isso permite controlar como o navegador lida com esses estilos ausentes.
+        Lembre-se de que nem todas as fontes suportam a síntese de posição, mas essa propriedade é útil para garantir uma tipografia consistente, respeitando as limitações da fonte </p>
+   </div>
+
+
+
+   <div>
+    <p><strong>17.Font-synthesis-small-caps</strong> no CSS permite especificar se um navegador pode ou não sintetizar o tipo de fonte em letras maiúsculas pequenas quando está ausente em uma família de fontes. 
+       <ul>
+        <li>  auto: Indica que o tipo de fonte em letras maiúsculas pequenas ausente pode ser sintetizado pelo navegador, se necessário. Esse é o valor padrão</li>
+        <li> none: Indica que a síntese desse tipo de fonte pelo navegador não é permitida</li>
+       </ul>
+     
+        A síntese de letras maiúsculas pequenas é útil quando uma fonte não possui uma variante específica para esse estilo. No entanto, em alguns casos, a síntese pode afetar a legibilidade ou a estética do texto.
+       
+        Isso permite controlar como o navegador lida com esses estilos ausentes.
+        Lembre-se de que nem todas as fontes suportam a síntese de letras maiúsculas pequenas, mas essa propriedade é útil para garantir uma tipografia consistente, respeitando as limitações da fonte. </p>
+   </div>
+
+
+
+   <div style="background-color: rgb(234, 220, 220);">
+    <p><strong>18.Font-synthesis-style</strong> no CSS permite especificar se um navegador pode ou não sintetizar o tipo de fonte em itálico quando está ausente em uma família de fontes. 
+        <ul>
+            <li> auto: Indica que o tipo de fonte em itálico ausente pode ser sintetizado pelo navegador, se necessário. Esse é o valor padrão</li>
+            <li> none: Indica que a síntese desse tipo de fonte pelo navegador não é permitida</li>
+        </ul>
+      
+        A síntese de itálico é útil quando uma fonte não possui uma variante específica para esse estilo. No entanto, em alguns casos, a síntese pode afetar a legibilidade ou a estética do texto.
+      
+        Isso permite controlar como o navegador lida com esses estilos ausentes.
+        Lembre-se de que nem todas as fontes suportam a síntese de itálico, mas essa propriedade é útil para garantir uma tipografia consistente, respeitando as limitações da fonte.</p>
+   </div>
+
+   <div style="background-color: darkgoldenrod;">
+    <p><strong>19.Font-synthesis-weight</strong> no CSS permite especificar se um navegador pode ou não sintetizar o tipo de fonte em negrito quando está ausente em uma família de fontes.
+       <ul>
+        <li>  auto: Indica que o tipo de fonte em negrito ausente pode ser sintetizado pelo navegador, se necessário. Esse é o valor padrão</li>
+        <li> none: Indica que a síntese desse tipo de fonte pelo navegador não é permitida</li>
+       </ul> 
+               
+        A síntese de negrito é útil quando uma fonte não possui uma variante específica para esse estilo. No entanto, em alguns casos, a síntese pode afetar a legibilidade ou a estética do texto.
+       
+        Isso permite controlar como o navegador lida com esses estilos ausentes.
+        Lembre-se de que nem todas as fontes suportam a síntese de negrito, mas essa propriedade é útil para garantir uma tipografia consistente, respeitando as limitações da fonte.  </p>
+   </div>
+
+
+
+   <div style="background-color: darkkhaki;">
+    <p><strong>20. Font-variant-alternates</strong> no CSS controla o uso de glifos alternativos em uma família de fontes. Esses glifos alternativos podem ser referenciados por nomes alternativos definidos em @font-feature-values. A regra @font-feature-values associa, para uma determinada face de fonte, um nome legível por humanos a um índice numérico que controla um recurso específico da fonte OpenType. Para recursos que selecionam glifos alternativos (como estilísticos, conjuntos de estilo, variantes de caracteres, swashes, ornamentos ou anotações), a propriedade font-variant-alternates pode usar o nome legível por humanos para aplicar o recurso associado. Isso permite que as regras CSS ativem glifos alternativos sem precisar conhecer os valores de índice específicos que uma fonte usa para controlá-los.
+
+        
+        Lembre-se de que nem todas as fontes suportam todos os tipos de glifos alternativos, mas essa propriedade é útil para personalizar a aparência do texto de acordo com o design da fonte </p>
+
+   </div>
+
+  <div style="background-color: darksalmon;">
+     
+    <p><strong>21. Font-variant-caps</strong> no CSS permite controlar o uso de variações de capitalização em uma fonte. Ela afeta como as letras maiúsculas e minúsculas são exibidas. 
+        <ul>
+            <li>normal: Exibe as letras maiúsculas e minúsculas conforme a fonte padrão.</li>
+            <li>  small-caps: Exibe todas as letras em maiúsculas pequenas, onde as letras minúsculas são convertidas em maiúsculas, mas com um tamanho menor do que as maiúsculas originais.</li>
+            <li>  all-small-caps: Exibe tanto letras maiúsculas quanto minúsculas em maiúsculas pequenas (afetando também pontuação).</li>
+            <li>petite-caps: Exibe letras maiúsculas pequenas com um tamanho semelhante ao das minúsculas, mas com a forma das maiúsculas.</li>
+            <li> all-petite-caps: Exibe tanto letras maiúsculas quanto minúsculas em maiúsculas pequenas com a forma das maiúsculas.</li>
+            <li> unicase: Exibe todas as letras como maiúsculas ou minúsculas, independentemente da forma original.</li>
+            <li> titling-caps: Exibe letras maiúsculas com um tamanho maior e mais ornamentado.</li>
+        </ul>
+
+        Isso fará com que todas as letras sejam exibidas em maiúsculas pequenas.
+        Lembre-se de que nem todas as fontes suportam todos esses estilos de capitalização, mas essa propriedade é útil para personalizar a aparência do texto de acordo com o design da fonte</p>
+  </div>
+
+
+
+   <div style="background-color: azure;">
+    <p><strong>22.Font-variant-east-asian </strong>no CSS controla o uso de glifos alternativos para scripts do leste asiático, como japonês e chinês. Ela permite especificar diferentes variantes de glifos para exibição.
+        <ul>
+            <li> normal: Desativa o uso de glifos alternativos.</li>
+            <li> ruby: Força o uso de glifos especiais para caracteres ruby. Esses glifos costumam ser menores e mais ousados para melhorar o contraste.</li>
+            <li> <east-asian-variant-values>: Especifica um conjunto de variantes de glifos logográficos a serem usados para exibição. Os valores possíveis incluem:
+                jis78: JIS X 0208:1978
+                jis83: JIS X 0208:1983
+                jis90: JIS X 0208:1990
+                jis04: JIS X 0213:2004</li>
+                <li> simplified: Usar glifos simplificados para chinês</li>
+                <li>  traditional: Usar glifos tradicionais para chinês</li>
+                     </ul>
+       
+   Isso permite controlar como os glifos são exibidos com base nas necessidades específicas do texto.
+        Lembre-se de que nem todas as fontes suportam todas as variantes de glifos do leste asiático, mas essa propriedade é útil para personalizar a aparência do texto de acordo com o design da fonte. </p>
+
+   </div>
+
+
+   <div style="background-color: darkturquoise;">
+    
+    <p><strong>23. Font-variant-emoji </strong>no CSS controla o uso de variantes de glifos específicas para emojis. Ela permite especificar como os emojis devem ser exibidos em relação à fonte padrão.
+        <ul>
+            <li> normal: Exibe os emojis conforme a fonte padrão.</li>
+            <li>  emoji: Força o uso de glifos específicos para emojis, se disponíveis na fonte.</li>
+            <li> text: Exibe os emojis como texto normal (sem gráficos coloridos).</li>
+        </ul>
+       
+        Lembre-se de que nem todas as fontes suportam glifos específicos para emojis, mas essa propriedade é útil para personalizar a aparência dos emojis em seu conteúdo. </p>
+   </div>
+
+
+<div style="background-color: gainsboro;">
+    
+    <p><strong>24.Font-variant-position</strong> no CSS controla o posicionamento de glifos específicos em uma fonte. Ela permite especificar como os glifos de sobrescrito e subscrito devem ser exibidos.
+        <ul>
+            <li>  normal: Exibe os glifos de sobrescrito e subscrito conforme a fonte padrão.</li>
+            <li> sub: Força o uso de glifos de subscrito.</li>
+            <li>  super: Força o uso de glifos de sobrescrito.</li>
+        </ul>
+             
+        Lembre-se de que nem todas as fontes suportam todos os tipos de glifos de posição, mas essa propriedade é útil para personalizar a aparência do texto de acordo com o design da fonte.</p>
+</div>
+   
+
+</body>
+</html>
